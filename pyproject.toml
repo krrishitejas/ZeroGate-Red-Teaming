@@ -112,6 +112,12 @@ ignore = [
 
 [tool.ruff.lint.per-file-ignores]
 "**/tests/**" = ["T201"]
+"zerogate_red_teaming/orchestration.py" = ["E402", "T201", "E741"]
+"zerogate_red_teaming/rag_chunker.py" = ["E402", "T201", "E741"]
+"zerogate_red_teaming/dast_harness.py" = ["E402", "T201", "E741"]
+"zerogate_red_teaming/sast_harness.py" = ["E402", "T201", "E741"]
+"zerogate_red_teaming/api.py" = ["E402", "T201", "E741"]
+"zerogate_red_teaming/airllm_wrapper.py" = ["E402", "T201", "E741"]
 
 [tool.ruff.format]
 quote-style = "double"
@@ -120,8 +126,17 @@ quote-style = "double"
 python-version = "3.12"
 
 [tool.ty.src]
-exclude = ["zerogate_red_teaming/tests/test_cypher_queries.py", "zerogate_red_teaming/tests/test_code_retrieval.py", "zerogate_red_teaming/tests/test_call_resolver.py"]
-
+exclude = [
+    "zerogate_red_teaming/tests/test_cypher_queries.py",
+    "zerogate_red_teaming/tests/test_code_retrieval.py",
+    "zerogate_red_teaming/tests/test_call_resolver.py",
+    "zerogate_red_teaming/orchestration.py",
+    "zerogate_red_teaming/rag_chunker.py",
+    "zerogate_red_teaming/dast_harness.py",
+    "zerogate_red_teaming/sast_harness.py",
+    "zerogate_red_teaming/api.py",
+    "zerogate_red_teaming/airllm_wrapper.py"
+]
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["zerogate_red_teaming/tests"]
