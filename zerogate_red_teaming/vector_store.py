@@ -11,8 +11,8 @@ from .utils.dependencies import has_qdrant_client
 _RETRIEVE_BATCH_SIZE = 1000
 
 if has_qdrant_client():
-    from qdrant_client import QdrantClient  # type: ignore
-    from qdrant_client.models import Distance, PointStruct, VectorParams  # type: ignore
+    from qdrant_client import QdrantClient
+    from qdrant_client.models import Distance, PointStruct, VectorParams
 
     _CLIENT: QdrantClient | None = None
 

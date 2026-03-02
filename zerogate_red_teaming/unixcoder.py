@@ -2,9 +2,9 @@
 # (H) Copyright (c) Microsoft Corporation.
 # (H) Licensed under the MIT license.
 
-import torch  # type: ignore
-from torch import nn  # type: ignore
-from transformers import RobertaConfig, RobertaModel, RobertaTokenizer  # type: ignore
+import torch
+from torch import nn
+from transformers import RobertaConfig, RobertaModel, RobertaTokenizer
 
 from . import constants as cs
 

@@ -92,9 +92,9 @@ def clear_embedding_cache() -> None:
 
 
 if has_torch() and has_transformers():
-    import numpy as np  # type: ignore
-    import torch  # type: ignore
-    from numpy.typing import NDArray  # type: ignore
+    import numpy as np
+    import torch
+    from numpy.typing import NDArray
 
     from .unixcoder import UniXcoder
 
