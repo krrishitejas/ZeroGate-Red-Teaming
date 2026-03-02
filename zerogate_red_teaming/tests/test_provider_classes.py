@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from typing import Any
 from unittest.mock import MagicMock, patch
 
@@ -95,6 +96,7 @@ class TestGoogleProvider:
 
         provider.validate_config()
 
+    @patch.dict(os.environ, {}, clear=True)
     def test_google_gla_validation_error(self) -> None:
         provider = GoogleProvider(provider_type=GoogleProviderType.GLA)
 
@@ -129,6 +131,7 @@ class TestOpenAIProvider:
 
         provider.validate_config()
 
+    @patch.dict(os.environ, {}, clear=True)
     def test_openai_validation_error(self) -> None:
         provider = OpenAIProvider()
 
