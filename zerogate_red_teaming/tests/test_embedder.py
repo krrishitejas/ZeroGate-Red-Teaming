@@ -119,7 +119,9 @@ def test_get_model_is_cached(reset_model_cache: None) -> None:
         mock_instance.eval.return_value = mock_instance
         mock_unixcoder_class.return_value = mock_instance
 
-        with patch("zerogate_red_teaming.embedder.torch.cuda.is_available", return_value=False):
+        with patch(
+            "zerogate_red_teaming.embedder.torch.cuda.is_available", return_value=False
+        ):
             model1 = get_model()
             model2 = get_model()
 
@@ -139,7 +141,9 @@ def test_get_model_uses_cuda_when_available(reset_model_cache: None) -> None:
         mock_instance.cuda.return_value = mock_instance
         mock_unixcoder_class.return_value = mock_instance
 
-        with patch("zerogate_red_teaming.embedder.torch.cuda.is_available", return_value=True):
+        with patch(
+            "zerogate_red_teaming.embedder.torch.cuda.is_available", return_value=True
+        ):
             get_model()
 
     mock_instance.cuda.assert_called_once()
@@ -156,7 +160,9 @@ def test_get_model_does_not_use_cuda_when_unavailable(reset_model_cache: None) -
         mock_instance.eval.return_value = mock_instance
         mock_unixcoder_class.return_value = mock_instance
 
-        with patch("zerogate_red_teaming.embedder.torch.cuda.is_available", return_value=False):
+        with patch(
+            "zerogate_red_teaming.embedder.torch.cuda.is_available", return_value=False
+        ):
             get_model()
 
     mock_instance.cuda.assert_not_called()

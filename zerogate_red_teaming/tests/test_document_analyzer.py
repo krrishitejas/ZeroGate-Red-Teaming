@@ -54,7 +54,9 @@ class TestDocumentAnalyzerInit:
     def test_init_resolves_project_root(
         self, temp_project_root: Path, mock_settings: MagicMock
     ) -> None:
-        with patch("zerogate_red_teaming.tools.document_analyzer.settings", mock_settings):
+        with patch(
+            "zerogate_red_teaming.tools.document_analyzer.settings", mock_settings
+        ):
             with patch("zerogate_red_teaming.tools.document_analyzer.genai.Client"):
                 analyzer = DocumentAnalyzer(str(temp_project_root))
                 assert analyzer.project_root == temp_project_root.resolve()
@@ -64,7 +66,9 @@ class TestDocumentAnalyzerInit:
     ) -> None:
         mock_settings.active_orchestrator_config.provider = Provider.GOOGLE
         mock_settings.active_orchestrator_config.provider_type = "api"
-        with patch("zerogate_red_teaming.tools.document_analyzer.settings", mock_settings):
+        with patch(
+            "zerogate_red_teaming.tools.document_analyzer.settings", mock_settings
+        ):
             with patch(
                 "zerogate_red_teaming.tools.document_analyzer.genai.Client"
             ) as mock_client:
@@ -75,7 +79,9 @@ class TestDocumentAnalyzerInit:
         self, temp_project_root: Path, mock_settings: MagicMock
     ) -> None:
         mock_settings.active_orchestrator_config.provider = "anthropic"
-        with patch("zerogate_red_teaming.tools.document_analyzer.settings", mock_settings):
+        with patch(
+            "zerogate_red_teaming.tools.document_analyzer.settings", mock_settings
+        ):
             analyzer = DocumentAnalyzer(str(temp_project_root))
             assert isinstance(analyzer.client, _NotSupportedClient)
 
@@ -85,7 +91,9 @@ class TestDocumentAnalyzerAnalyze:
         self, temp_project_root: Path, mock_settings: MagicMock
     ) -> None:
         mock_settings.active_orchestrator_config.provider = "anthropic"
-        with patch("zerogate_red_teaming.tools.document_analyzer.settings", mock_settings):
+        with patch(
+            "zerogate_red_teaming.tools.document_analyzer.settings", mock_settings
+        ):
             analyzer = DocumentAnalyzer(str(temp_project_root))
             result = analyzer.analyze("test.pdf", "What is this?")
             assert "Error:" in result
@@ -97,7 +105,9 @@ class TestDocumentAnalyzerAnalyze:
         mock_settings: MagicMock,
         mock_genai_client: MagicMock,
     ) -> None:
-        with patch("zerogate_red_teaming.tools.document_analyzer.settings", mock_settings):
+        with patch(
+            "zerogate_red_teaming.tools.document_analyzer.settings", mock_settings
+        ):
             with patch(
                 "zerogate_red_teaming.tools.document_analyzer.genai.Client",
                 return_value=mock_genai_client,
@@ -113,7 +123,9 @@ class TestDocumentAnalyzerAnalyze:
         mock_settings: MagicMock,
         mock_genai_client: MagicMock,
     ) -> None:
-        with patch("zerogate_red_teaming.tools.document_analyzer.settings", mock_settings):
+        with patch(
+            "zerogate_red_teaming.tools.document_analyzer.settings", mock_settings
+        ):
             with patch(
                 "zerogate_red_teaming.tools.document_analyzer.genai.Client",
                 return_value=mock_genai_client,
@@ -130,7 +142,9 @@ class TestDocumentAnalyzerAnalyze:
     ) -> None:
         test_file = temp_project_root / "test.txt"
         test_file.write_text("Test content", encoding="utf-8")
-        with patch("zerogate_red_teaming.tools.document_analyzer.settings", mock_settings):
+        with patch(
+            "zerogate_red_teaming.tools.document_analyzer.settings", mock_settings
+        ):
             with patch(
                 "zerogate_red_teaming.tools.document_analyzer.genai.Client",
                 return_value=mock_genai_client,
@@ -147,7 +161,9 @@ class TestDocumentAnalyzerAnalyze:
     ) -> None:
         test_file = temp_project_root / "test.txt"
         test_file.write_text("Test content", encoding="utf-8")
-        with patch("zerogate_red_teaming.tools.document_analyzer.settings", mock_settings):
+        with patch(
+            "zerogate_red_teaming.tools.document_analyzer.settings", mock_settings
+        ):
             with patch(
                 "zerogate_red_teaming.tools.document_analyzer.genai.Client",
                 return_value=mock_genai_client,
@@ -169,7 +185,9 @@ class TestDocumentAnalyzerAnalyze:
 
         test_file = temp_project_root / "test.txt"
         test_file.write_text("Test content", encoding="utf-8")
-        with patch("zerogate_red_teaming.tools.document_analyzer.settings", mock_settings):
+        with patch(
+            "zerogate_red_teaming.tools.document_analyzer.settings", mock_settings
+        ):
             with patch(
                 "zerogate_red_teaming.tools.document_analyzer.genai.Client",
                 return_value=mock_client,
@@ -196,7 +214,9 @@ class TestDocumentAnalyzerAnalyze:
 
         test_file = temp_project_root / "test.txt"
         test_file.write_text("Test content", encoding="utf-8")
-        with patch("zerogate_red_teaming.tools.document_analyzer.settings", mock_settings):
+        with patch(
+            "zerogate_red_teaming.tools.document_analyzer.settings", mock_settings
+        ):
             with patch(
                 "zerogate_red_teaming.tools.document_analyzer.genai.Client",
                 return_value=mock_client,
@@ -213,7 +233,9 @@ class TestCreateDocumentAnalyzerTool:
         mock_settings: MagicMock,
         mock_genai_client: MagicMock,
     ) -> None:
-        with patch("zerogate_red_teaming.tools.document_analyzer.settings", mock_settings):
+        with patch(
+            "zerogate_red_teaming.tools.document_analyzer.settings", mock_settings
+        ):
             with patch(
                 "zerogate_red_teaming.tools.document_analyzer.genai.Client",
                 return_value=mock_genai_client,
@@ -228,7 +250,9 @@ class TestCreateDocumentAnalyzerTool:
         mock_settings: MagicMock,
         mock_genai_client: MagicMock,
     ) -> None:
-        with patch("zerogate_red_teaming.tools.document_analyzer.settings", mock_settings):
+        with patch(
+            "zerogate_red_teaming.tools.document_analyzer.settings", mock_settings
+        ):
             with patch(
                 "zerogate_red_teaming.tools.document_analyzer.genai.Client",
                 return_value=mock_genai_client,
@@ -247,7 +271,9 @@ class TestCreateDocumentAnalyzerTool:
         mock_settings: MagicMock,
         mock_genai_client: MagicMock,
     ) -> None:
-        with patch("zerogate_red_teaming.tools.document_analyzer.settings", mock_settings):
+        with patch(
+            "zerogate_red_teaming.tools.document_analyzer.settings", mock_settings
+        ):
             with patch(
                 "zerogate_red_teaming.tools.document_analyzer.genai.Client",
                 return_value=mock_genai_client,

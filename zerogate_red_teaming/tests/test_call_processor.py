@@ -1160,7 +1160,9 @@ class TestProcessCallsInFileErrorHandling:
             "_process_calls_in_functions",
             side_effect=RuntimeError("Simulated failure"),
         ):
-            with patch("zerogate_red_teaming.parsers.call_processor.logger") as mock_logger:
+            with patch(
+                "zerogate_red_teaming.parsers.call_processor.logger"
+            ) as mock_logger:
                 call_processor.process_calls_in_file(
                     test_file,
                     root_node,

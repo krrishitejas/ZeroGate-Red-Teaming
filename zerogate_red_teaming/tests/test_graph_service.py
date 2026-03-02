@@ -104,7 +104,9 @@ class TestMemgraphIngestorInit:
 
 class TestContextManager:
     def test_enter_connects_to_memgraph(self) -> None:
-        with patch("zerogate_red_teaming.services.graph_service.mgclient") as mock_mgclient:
+        with patch(
+            "zerogate_red_teaming.services.graph_service.mgclient"
+        ) as mock_mgclient:
             mock_conn = MagicMock()
             mock_mgclient.connect.return_value = mock_conn
 
@@ -117,7 +119,9 @@ class TestContextManager:
             assert result is ingestor
 
     def test_enter_passes_auth_when_provided(self) -> None:
-        with patch("zerogate_red_teaming.services.graph_service.mgclient") as mock_mgclient:
+        with patch(
+            "zerogate_red_teaming.services.graph_service.mgclient"
+        ) as mock_mgclient:
             mock_conn = MagicMock()
             mock_mgclient.connect.return_value = mock_conn
 
@@ -131,7 +135,9 @@ class TestContextManager:
             )
 
     def test_enter_omits_auth_when_not_provided(self) -> None:
-        with patch("zerogate_red_teaming.services.graph_service.mgclient") as mock_mgclient:
+        with patch(
+            "zerogate_red_teaming.services.graph_service.mgclient"
+        ) as mock_mgclient:
             mock_conn = MagicMock()
             mock_mgclient.connect.return_value = mock_conn
 

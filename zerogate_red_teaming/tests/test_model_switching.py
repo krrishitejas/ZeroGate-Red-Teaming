@@ -384,7 +384,9 @@ class TestCreateModelFromString:
         self, mock_settings: MagicMock
     ) -> None:
         mock_model = MagicMock()
-        with patch("zerogate_red_teaming.main.get_provider_from_config") as mock_get_provider:
+        with patch(
+            "zerogate_red_teaming.main.get_provider_from_config"
+        ) as mock_get_provider:
             mock_provider = MagicMock()
             mock_provider.create_model.return_value = mock_model
             mock_get_provider.return_value = mock_provider
@@ -404,7 +406,9 @@ class TestCreateModelFromString:
 
     def test_same_provider_uses_current_config(self, mock_settings: MagicMock) -> None:
         mock_model = MagicMock()
-        with patch("zerogate_red_teaming.main.get_provider_from_config") as mock_get_provider:
+        with patch(
+            "zerogate_red_teaming.main.get_provider_from_config"
+        ) as mock_get_provider:
             mock_provider = MagicMock()
             mock_provider.create_model.return_value = mock_model
             mock_get_provider.return_value = mock_provider
@@ -419,7 +423,9 @@ class TestCreateModelFromString:
         mock_model = MagicMock()
         mock_settings.ollama_endpoint = "http://localhost:11434/v1"
 
-        with patch("zerogate_red_teaming.main.get_provider_from_config") as mock_get_provider:
+        with patch(
+            "zerogate_red_teaming.main.get_provider_from_config"
+        ) as mock_get_provider:
             mock_provider = MagicMock()
             mock_provider.create_model.return_value = mock_model
             mock_get_provider.return_value = mock_provider

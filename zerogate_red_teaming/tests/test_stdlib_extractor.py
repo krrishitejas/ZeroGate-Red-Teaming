@@ -120,7 +120,9 @@ class TestCachePersistence:
 
             se.flush_stdlib_cache()
 
-            cache_file = tmp_path / ".cache" / "zerogate_red_teaming" / "stdlib_cache.json"
+            cache_file = (
+                tmp_path / ".cache" / "zerogate_red_teaming" / "stdlib_cache.json"
+            )
             assert cache_file.exists()
 
 

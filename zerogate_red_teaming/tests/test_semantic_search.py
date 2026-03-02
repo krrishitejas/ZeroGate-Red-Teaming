@@ -71,7 +71,10 @@ def test_semantic_code_search_returns_formatted_results(
 
     with (
         patch("zerogate_red_teaming.embedder.embed_code", mock_embed_code),
-        patch("zerogate_red_teaming.vector_store.search_embeddings", mock_search_embeddings),
+        patch(
+            "zerogate_red_teaming.vector_store.search_embeddings",
+            mock_search_embeddings,
+        ),
         patch(
             "zerogate_red_teaming.services.graph_service.MemgraphIngestor",
             return_value=mock_ingestor,
@@ -98,7 +101,10 @@ def test_semantic_code_search_calls_embed_code_with_query(
 
     with (
         patch("zerogate_red_teaming.embedder.embed_code", mock_embed_code),
-        patch("zerogate_red_teaming.vector_store.search_embeddings", mock_search_embeddings),
+        patch(
+            "zerogate_red_teaming.vector_store.search_embeddings",
+            mock_search_embeddings,
+        ),
         patch(
             "zerogate_red_teaming.services.graph_service.MemgraphIngestor",
             return_value=mock_ingestor,
@@ -121,7 +127,10 @@ def test_semantic_code_search_passes_top_k_to_search(
 
     with (
         patch("zerogate_red_teaming.embedder.embed_code", mock_embed_code),
-        patch("zerogate_red_teaming.vector_store.search_embeddings", mock_search_embeddings),
+        patch(
+            "zerogate_red_teaming.vector_store.search_embeddings",
+            mock_search_embeddings,
+        ),
         patch(
             "zerogate_red_teaming.services.graph_service.MemgraphIngestor",
             return_value=mock_ingestor,
@@ -220,7 +229,8 @@ def test_get_function_source_code_returns_source(mock_ingestor: MagicMock) -> No
             mock_validate,
         ),
         patch(
-            "zerogate_red_teaming.utils.source_extraction.extract_source_lines", mock_extract
+            "zerogate_red_teaming.utils.source_extraction.extract_source_lines",
+            mock_extract,
         ),
     ):
         result = get_function_source_code(123)
@@ -345,7 +355,10 @@ async def test_semantic_search_tool_formats_results(
 
     with (
         patch("zerogate_red_teaming.embedder.embed_code", mock_embed_code),
-        patch("zerogate_red_teaming.vector_store.search_embeddings", mock_search_embeddings),
+        patch(
+            "zerogate_red_teaming.vector_store.search_embeddings",
+            mock_search_embeddings,
+        ),
         patch(
             "zerogate_red_teaming.services.graph_service.MemgraphIngestor",
             return_value=mock_ingestor,
@@ -415,7 +428,8 @@ async def test_get_function_source_tool_returns_source(
             mock_validate,
         ),
         patch(
-            "zerogate_red_teaming.utils.source_extraction.extract_source_lines", mock_extract
+            "zerogate_red_teaming.utils.source_extraction.extract_source_lines",
+            mock_extract,
         ),
     ):
         result = await tool.function(123)

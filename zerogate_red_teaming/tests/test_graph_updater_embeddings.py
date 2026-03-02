@@ -14,9 +14,12 @@ MOCK_EMBEDDING = [0.1] * 768
 _PATCH_DEPS = patch(
     "zerogate_red_teaming.graph_updater.has_semantic_dependencies", return_value=True
 )
-_PATCH_EMBED = patch("zerogate_red_teaming.embedder.embed_code", return_value=MOCK_EMBEDDING)
+_PATCH_EMBED = patch(
+    "zerogate_red_teaming.embedder.embed_code", return_value=MOCK_EMBEDDING
+)
 _PATCH_STORE_BATCH = patch(
-    "zerogate_red_teaming.vector_store.store_embedding_batch", side_effect=lambda pts: len(pts)
+    "zerogate_red_teaming.vector_store.store_embedding_batch",
+    side_effect=lambda pts: len(pts),
 )
 _PATCH_RECONCILE = patch(
     "zerogate_red_teaming.vector_store.verify_stored_ids", side_effect=lambda ids: ids
@@ -106,7 +109,10 @@ class TestGenerateSemanticEmbeddings:
         query_arg = query_ingestor.fetch_all.call_args[0][0]
         assert query_arg == cs.CYPHER_QUERY_EMBEDDINGS
 
-    @patch("zerogate_red_teaming.graph_updater.has_semantic_dependencies", return_value=False)
+    @patch(
+        "zerogate_red_teaming.graph_updater.has_semantic_dependencies",
+        return_value=False,
+    )
     def test_skips_when_no_semantic_dependencies(
         self,
         _mock_deps: MagicMock,
@@ -189,8 +195,14 @@ class TestGenerateSemanticEmbeddings:
         mock_embed.assert_not_called()
         mock_store_batch.assert_not_called()
 
-    @patch("zerogate_red_teaming.graph_updater.has_semantic_dependencies", return_value=True)
-    @patch("zerogate_red_teaming.embedder.embed_code", side_effect=RuntimeError("model error"))
+    @patch(
+        "zerogate_red_teaming.graph_updater.has_semantic_dependencies",
+        return_value=True,
+    )
+    @patch(
+        "zerogate_red_teaming.embedder.embed_code",
+        side_effect=RuntimeError("model error"),
+    )
     @_PATCH_STORE_BATCH
     @_PATCH_RECONCILE
     def test_handles_embed_failure_gracefully(

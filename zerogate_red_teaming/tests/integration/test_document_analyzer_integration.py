@@ -127,7 +127,9 @@ class TestDocumentAnalyzerToolIntegration:
         mock_settings: MagicMock,
         mock_genai_client: MagicMock,
     ) -> None:
-        with patch("zerogate_red_teaming.tools.document_analyzer.settings", mock_settings):
+        with patch(
+            "zerogate_red_teaming.tools.document_analyzer.settings", mock_settings
+        ):
             with patch(
                 "zerogate_red_teaming.tools.document_analyzer.genai.Client",
                 return_value=mock_genai_client,
@@ -146,7 +148,9 @@ class TestDocumentAnalyzerToolIntegration:
         mock_settings: MagicMock,
         mock_genai_client: MagicMock,
     ) -> None:
-        with patch("zerogate_red_teaming.tools.document_analyzer.settings", mock_settings):
+        with patch(
+            "zerogate_red_teaming.tools.document_analyzer.settings", mock_settings
+        ):
             with patch(
                 "zerogate_red_teaming.tools.document_analyzer.genai.Client",
                 return_value=mock_genai_client,
@@ -167,7 +171,9 @@ class TestDocumentAnalyzerWithDifferentProviders:
     ) -> None:
         mock_settings = MagicMock()
         mock_settings.active_orchestrator_config.provider = "anthropic"
-        with patch("zerogate_red_teaming.tools.document_analyzer.settings", mock_settings):
+        with patch(
+            "zerogate_red_teaming.tools.document_analyzer.settings", mock_settings
+        ):
             analyzer = DocumentAnalyzer(str(temp_test_repo))
             result = analyzer.analyze("readme.txt", "What is this?")
             assert "not supported" in result.lower()
@@ -189,7 +195,9 @@ class TestDocumentAnalyzerResponseHandling:
         response.candidates = [candidate]
         mock_client.models.generate_content.return_value = response
 
-        with patch("zerogate_red_teaming.tools.document_analyzer.settings", mock_settings):
+        with patch(
+            "zerogate_red_teaming.tools.document_analyzer.settings", mock_settings
+        ):
             with patch(
                 "zerogate_red_teaming.tools.document_analyzer.genai.Client",
                 return_value=mock_client,
@@ -209,7 +217,9 @@ class TestDocumentAnalyzerResponseHandling:
         response.candidates = None
         mock_client.models.generate_content.return_value = response
 
-        with patch("zerogate_red_teaming.tools.document_analyzer.settings", mock_settings):
+        with patch(
+            "zerogate_red_teaming.tools.document_analyzer.settings", mock_settings
+        ):
             with patch(
                 "zerogate_red_teaming.tools.document_analyzer.genai.Client",
                 return_value=mock_client,
