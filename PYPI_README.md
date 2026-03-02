@@ -1,6 +1,6 @@
 # ZeroGate-Red-Teaming
 
-A graph-based RAG system that parses multi-language codebases with Tree-sitter, builds knowledge graphs in Memgraph, and enables natural language querying, editing, and optimization.
+An advanced Automated Red Teaming Platform built by Rishi Tejas K R. It analyzes multi-language codebases using Tree-sitter, builds security-focused knowledge graphs in Memgraph, and orchestrates Hybrid-Aware AI (Cloud LLMs + Local AirLLM) with Semgrep SAST to autonomously detect, query, and remediate vulnerabilities.
 
 ## Install
 

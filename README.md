@@ -36,9 +36,9 @@
 </p>
 </div>
 
-# ZeroGate-Red-Teaming: A Graph-Based RAG System for Any Codebases
+# ZeroGate-Red-Teaming: Automated Red Teaming & Security Platform
 
-An accurate Retrieval-Augmented Generation (RAG) system that analyzes multi-language codebases using Tree-sitter, builds comprehensive knowledge graphs, and enables natural language querying of codebase structure and relationships as well as editing capabilities.
+An advanced Automated Red Teaming Platform built by Rishi Tejas K R. It analyzes multi-language codebases using Tree-sitter, builds comprehensive knowledge graphs, and orchestrates a **Hybrid-Aware AI** pipeline (combining Cloud models, Local AirLLMs, and Semgrep SAST) to autonomously expose, map, and remediate codebase vulnerabilities.
 
 
 <p align="center">
@@ -47,8 +47,9 @@ An accurate Retrieval-Augmented Generation (RAG) system that analyzes multi-lang
 
 ## Latest News 🔥
 
-- **[NEW]** **MCP Server Integration**: ZeroGate-Red-Teaming now works as an MCP server with Claude Code! Query and edit your codebase using natural language directly from Claude Code. [Setup Guide](docs/claude-code-setup.md)
-- [2025/10/21] **Semantic Code Search**: Added intent-based code search using UniXcoder embeddings. Find functions by describing what they do (e.g., "error handling functions", "authentication code") rather than by exact names.
+- **[NEW]** **Hybrid-Aware AI Architecture**: Upgraded the orchestrator to intelligently route traffic between heavy Cloud LLMs, efficient Local LLMs (`AirLLM`), and deterministic security scanners (`Semgrep`).
+- **[NEW]** **Semgrep SAST Integration**: High fidelity static analysis injected straight into the red-teaming orchestrator context.
+- **[NEW]** **MCP Server Integration**: ZeroGate-Red-Teaming now works as an MCP server with Claude Code! Query and edit your codebase using natural language directly from Claude Code.
 
 ## 🚀 Features
 
@@ -885,16 +886,13 @@ For issues or questions:
 3. Ensure all environment variables are set
 4. Review the graph schema matches your expectations
 
-## 💼 Enterprise Services
+## 💼 Development & Consulting
 
-ZeroGate-Red-Teaming is open source and free to use. For organizations that need more, we offer **fully managed cloud-hosted solutions** and **on-premise deployments**:
+ZeroGate-Red-Teaming is open source and freely available for modern security teams and solo red teamers. Built and maintained by Rishi Tejas K R, its Hybrid-Aware AI architecture allows you to scale from laptops using `AirLLM` up to large cloud instances.
 
-- **Cloud-Hosted Deployment** — Managed cloud infrastructure for both the graph database and AI agent connection. Zero infrastructure overhead — we handle scaling, updates, and availability so your team can focus on building.
-- **On-Premise & Air-Gapped Deployment** — Deploy ZeroGate-Red-Teaming entirely within your own environment, including air-gapped networks. Full data sovereignty for regulated industries and security-sensitive organizations.
+For issues, feature requests, or custom rule integration, please visit the repository.
 
-We also offer custom development, integration consulting, technical support contracts, and team training.
-
-**[View plans & pricing at ZeroGate-Red-Teaming.com →](https://ZeroGate-Red-Teaming.com/enterprise)**
+**[View the Repository on GitHub →](https://github.com/krrishitejas/ZeroGate-Red-Teaming)**
 
 ## Star History
 
