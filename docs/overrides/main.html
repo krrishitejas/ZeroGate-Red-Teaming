@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ZeroGate-Red-Teaming",
+  "description": "Automated red teaming platform for multi-language codebases. Leverages graph-based RAG with Tree-sitter to analyze, query, and identify security vulnerabilities.",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Linux, macOS, Windows",
+  "url": "https://docs.ZeroGate-Red-Teaming.com",
+  "downloadUrl": "https://pypi.org/project/ZeroGate-Red-Teaming/",
+  "softwareRequirements": "Python 3.12+, Docker",
+  "license": "https://opensource.org/licenses/MIT",
+  "author": {
+    "@type": "Person",
+    "name": "Rishitejas KR",
+    "url": "https://github.com/krrishitejas"
+  },
+  "codeRepository": "https://github.com/krrishitejas/ZeroGate-Red-Teaming",
+  "programmingLanguage": "Python",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+{% endblock %}

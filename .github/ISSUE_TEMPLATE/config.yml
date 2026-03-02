@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Discussions
+    url: https://github.com/krrishitejas/ZeroGate-Red-Teaming/discussions
+    about: Ask questions and discuss ideas with the community
+  - name: 📚 Documentation
+    url: https://github.com/krrishitejas/ZeroGate-Red-Teaming#readme
+    about: Read the documentation and setup guides
+  - name: 🎓 MCP Server Setup
+    url: https://github.com/krrishitejas/ZeroGate-Red-Teaming/blob/main/docs/claude-code-setup.md
+    about: Setup ZeroGate-Red-Teaming as an MCP server with Claude Code

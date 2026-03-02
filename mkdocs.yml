@@ -1,0 +1,116 @@
+site_name: ZeroGate-Red-Teaming
+site_url: https://docs.ZeroGate-Red-Teaming.com
+site_description: >-
+  Automated red teaming platform for multi-language codebases. Leverages graph-based
+  RAG with Tree-sitter to analyze, query, and identify security vulnerabilities
+  across your codebase.
+site_author: Rishitejas KR
+
+repo_name: krrishitejas/ZeroGate-Red-Teaming
+repo_url: https://github.com/krrishitejas/ZeroGate-Red-Teaming
+edit_uri: edit/main/docs/
+
+copyright: Copyright &copy; 2026 Rishitejas KR
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  logo: assets/logo-icon.png
+  favicon: assets/favicon.png
+  font:
+    text: Inter
+    code: JetBrains Mono
+  palette:
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Configuration: getting-started/configuration.md
+    - Quick Start: getting-started/quickstart.md
+  - User Guide:
+    - CLI Reference: guide/cli-reference.md
+    - Interactive Querying: guide/interactive-querying.md
+    - Code Optimization: guide/code-optimization.md
+    - Graph Export: guide/graph-export.md
+    - Real-Time Updates: guide/realtime-updates.md
+    - MCP Server: guide/mcp-server.md
+  - Python SDK:
+    - Overview: sdk/overview.md
+    - Graph Loader: sdk/graph-loader.md
+    - Cypher Generator: sdk/cypher-generator.md
+    - Semantic Search: sdk/semantic-search.md
+  - Architecture:
+    - Overview: architecture/overview.md
+    - Graph Schema: architecture/graph-schema.md
+    - Language Support: architecture/language-support.md
+  - Advanced:
+    - Adding Languages: advanced/adding-languages.md
+    - Ignore Patterns: advanced/ignore-patterns.md
+    - Building Binaries: advanced/building-binaries.md
+    - Troubleshooting: advanced/troubleshooting.md
+  - Contributing: contributing.md
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/krrishitejas/ZeroGate-Red-Teaming
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/ZeroGate-Red-Teaming/
+  generator: false
