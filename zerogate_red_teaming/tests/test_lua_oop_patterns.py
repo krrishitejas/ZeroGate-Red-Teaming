@@ -1,7 +1,10 @@
 from pathlib import Path
 from unittest.mock import MagicMock
 
-from zerogate_red_teaming.tests.conftest import create_and_run_updater, get_relationships
+from zerogate_red_teaming.tests.conftest import (
+    create_and_run_updater,
+    get_relationships,
+)
 from zerogate_red_teaming.types_defs import NodeType
 
 

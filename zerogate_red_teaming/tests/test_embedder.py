@@ -110,7 +110,9 @@ def test_embed_code_uses_default_max_length(
 
 @pytest.mark.skipif(not _has_semantic_deps(), reason="torch/transformers not installed")
 def test_get_model_is_cached(reset_model_cache: None) -> None:
-    from zerogate_red_teaming.embedder import get_model  # ty: ignore[possibly-missing-import]
+    from zerogate_red_teaming.embedder import (
+        get_model,  # ty: ignore[possibly-missing-import]
+    )
 
     with patch("zerogate_red_teaming.embedder.UniXcoder") as mock_unixcoder_class:
         mock_instance = MagicMock()
@@ -127,7 +129,9 @@ def test_get_model_is_cached(reset_model_cache: None) -> None:
 
 @pytest.mark.skipif(not _has_semantic_deps(), reason="torch/transformers not installed")
 def test_get_model_uses_cuda_when_available(reset_model_cache: None) -> None:
-    from zerogate_red_teaming.embedder import get_model  # ty: ignore[possibly-missing-import]
+    from zerogate_red_teaming.embedder import (
+        get_model,  # ty: ignore[possibly-missing-import]
+    )
 
     with patch("zerogate_red_teaming.embedder.UniXcoder") as mock_unixcoder_class:
         mock_instance = MagicMock()
@@ -143,7 +147,9 @@ def test_get_model_uses_cuda_when_available(reset_model_cache: None) -> None:
 
 @pytest.mark.skipif(not _has_semantic_deps(), reason="torch/transformers not installed")
 def test_get_model_does_not_use_cuda_when_unavailable(reset_model_cache: None) -> None:
-    from zerogate_red_teaming.embedder import get_model  # ty: ignore[possibly-missing-import]
+    from zerogate_red_teaming.embedder import (
+        get_model,  # ty: ignore[possibly-missing-import]
+    )
 
     with patch("zerogate_red_teaming.embedder.UniXcoder") as mock_unixcoder_class:
         mock_instance = MagicMock()

@@ -319,7 +319,9 @@ def test_create_semantic_search_tool_returns_tool() -> None:
 def test_create_get_function_source_tool_returns_tool() -> None:
     from pydantic_ai import Tool
 
-    from zerogate_red_teaming.tools.semantic_search import create_get_function_source_tool
+    from zerogate_red_teaming.tools.semantic_search import (
+        create_get_function_source_tool,
+    )
     from zerogate_red_teaming.tools.tool_descriptions import AgenticToolName
 
     tool = create_get_function_source_tool()
@@ -385,7 +387,9 @@ async def test_semantic_search_tool_handles_no_results(
 async def test_get_function_source_tool_returns_source(
     mock_ingestor: MagicMock,
 ) -> None:
-    from zerogate_red_teaming.tools.semantic_search import create_get_function_source_tool
+    from zerogate_red_teaming.tools.semantic_search import (
+        create_get_function_source_tool,
+    )
 
     mock_ingestor._execute_query.return_value = [
         {
@@ -427,7 +431,9 @@ async def test_get_function_source_tool_returns_source(
 async def test_get_function_source_tool_handles_not_found(
     mock_ingestor: MagicMock,
 ) -> None:
-    from zerogate_red_teaming.tools.semantic_search import create_get_function_source_tool
+    from zerogate_red_teaming.tools.semantic_search import (
+        create_get_function_source_tool,
+    )
 
     mock_ingestor._execute_query.return_value = []
 

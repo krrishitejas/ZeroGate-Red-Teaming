@@ -15,7 +15,10 @@ from zerogate_red_teaming.providers.base import (
 from zerogate_red_teaming.services.llm import CypherGenerator
 from zerogate_red_teaming.tools.code_retrieval import CodeRetriever
 from zerogate_red_teaming.tools.directory_lister import DirectoryLister
-from zerogate_red_teaming.tools.document_analyzer import DocumentAnalyzer, _NotSupportedClient
+from zerogate_red_teaming.tools.document_analyzer import (
+    DocumentAnalyzer,
+    _NotSupportedClient,
+)
 from zerogate_red_teaming.tools.file_editor import FileEditor
 from zerogate_red_teaming.tools.file_reader import FileReader
 from zerogate_red_teaming.tools.file_writer import FileWriter

@@ -13,7 +13,10 @@ from zerogate_red_teaming.parser_loader import load_parsers
 from zerogate_red_teaming.services.graph_service import MemgraphIngestor
 from zerogate_red_teaming.services.llm import CypherGenerator
 from zerogate_red_teaming.tools import tool_descriptions as td
-from zerogate_red_teaming.tools.code_retrieval import CodeRetriever, create_code_retrieval_tool
+from zerogate_red_teaming.tools.code_retrieval import (
+    CodeRetriever,
+    create_code_retrieval_tool,
+)
 from zerogate_red_teaming.tools.codebase_query import create_query_tool
 from zerogate_red_teaming.tools.directory_lister import (
     DirectoryLister,

@@ -6,7 +6,10 @@ from unittest.mock import AsyncMock, MagicMock
 import pytest
 
 from zerogate_red_teaming.schemas import CodeSnippet
-from zerogate_red_teaming.tools.code_retrieval import CodeRetriever, create_code_retrieval_tool
+from zerogate_red_teaming.tools.code_retrieval import (
+    CodeRetriever,
+    create_code_retrieval_tool,
+)
 
 
 class TestCodeRetrieverInit:

@@ -3,7 +3,11 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from zerogate_red_teaming.tests.conftest import get_node_names, get_qualified_names, run_updater
+from zerogate_red_teaming.tests.conftest import (
+    get_node_names,
+    get_qualified_names,
+    run_updater,
+)
 from zerogate_red_teaming.types_defs import NodeType
 
 

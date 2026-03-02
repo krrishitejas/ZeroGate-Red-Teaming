@@ -5,7 +5,11 @@ from unittest.mock import MagicMock
 import pytest
 
 from zerogate_red_teaming.constants import SEPARATOR_DOT
-from zerogate_red_teaming.tests.conftest import get_node_names, get_relationships, run_updater
+from zerogate_red_teaming.tests.conftest import (
+    get_node_names,
+    get_relationships,
+    run_updater,
+)
 from zerogate_red_teaming.types_defs import NodeType
 
 

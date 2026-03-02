@@ -4,7 +4,11 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from zerogate_red_teaming.tests.conftest import get_node_names, get_relationships, run_updater
+from zerogate_red_teaming.tests.conftest import (
+    get_node_names,
+    get_relationships,
+    run_updater,
+)
 
 
 @pytest.fixture

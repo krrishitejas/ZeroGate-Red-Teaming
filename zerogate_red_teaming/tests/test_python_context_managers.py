@@ -6,7 +6,11 @@ import pytest
 
 from zerogate_red_teaming.graph_updater import GraphUpdater
 from zerogate_red_teaming.parser_loader import load_parsers
-from zerogate_red_teaming.tests.conftest import get_node_names, get_nodes, get_qualified_names
+from zerogate_red_teaming.tests.conftest import (
+    get_node_names,
+    get_nodes,
+    get_qualified_names,
+)
 
 
 @pytest.fixture

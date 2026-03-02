@@ -47,7 +47,9 @@ def my_func():
         tree = py_parser.parse(code)
         func_node = tree.root_node.children[0]
 
-        from zerogate_red_teaming.parsers.definition_processor import DefinitionProcessor
+        from zerogate_red_teaming.parsers.definition_processor import (
+            DefinitionProcessor,
+        )
 
         processor = DefinitionProcessor.__new__(DefinitionProcessor)
         result = processor._get_docstring(func_node)
@@ -62,7 +64,9 @@ def my_func():
         tree = py_parser.parse(code)
         func_node = tree.root_node.children[0]
 
-        from zerogate_red_teaming.parsers.definition_processor import DefinitionProcessor
+        from zerogate_red_teaming.parsers.definition_processor import (
+            DefinitionProcessor,
+        )
 
         processor = DefinitionProcessor.__new__(DefinitionProcessor)
         result = processor._get_docstring(func_node)
@@ -77,7 +81,9 @@ def my_func():
         tree = py_parser.parse(code)
         func_node = tree.root_node.children[0]
 
-        from zerogate_red_teaming.parsers.definition_processor import DefinitionProcessor
+        from zerogate_red_teaming.parsers.definition_processor import (
+            DefinitionProcessor,
+        )
 
         processor = DefinitionProcessor.__new__(DefinitionProcessor)
         result = processor._get_docstring(func_node)
@@ -92,7 +98,9 @@ def my_func():
         tree = py_parser.parse(code)
         func_node = tree.root_node.children[0]
 
-        from zerogate_red_teaming.parsers.definition_processor import DefinitionProcessor
+        from zerogate_red_teaming.parsers.definition_processor import (
+            DefinitionProcessor,
+        )
 
         processor = DefinitionProcessor.__new__(DefinitionProcessor)
         result = processor._get_docstring(func_node)
@@ -111,7 +119,9 @@ def my_func():
         tree = py_parser.parse(code)
         func_node = tree.root_node.children[0]
 
-        from zerogate_red_teaming.parsers.definition_processor import DefinitionProcessor
+        from zerogate_red_teaming.parsers.definition_processor import (
+            DefinitionProcessor,
+        )
 
         processor = DefinitionProcessor.__new__(DefinitionProcessor)
         result = processor._get_docstring(func_node)
@@ -128,7 +138,9 @@ def my_func():
         tree = py_parser.parse(code)
         func_node = tree.root_node.children[0]
 
-        from zerogate_red_teaming.parsers.definition_processor import DefinitionProcessor
+        from zerogate_red_teaming.parsers.definition_processor import (
+            DefinitionProcessor,
+        )
 
         processor = DefinitionProcessor.__new__(DefinitionProcessor)
         result = processor._get_docstring(func_node)
@@ -142,7 +154,9 @@ def my_func():
         tree = py_parser.parse(code)
         func_node = tree.root_node.children[0]
 
-        from zerogate_red_teaming.parsers.definition_processor import DefinitionProcessor
+        from zerogate_red_teaming.parsers.definition_processor import (
+            DefinitionProcessor,
+        )
 
         processor = DefinitionProcessor.__new__(DefinitionProcessor)
         result = processor._get_docstring(func_node)
@@ -158,7 +172,9 @@ class MyClass:
         tree = py_parser.parse(code)
         class_node = tree.root_node.children[0]
 
-        from zerogate_red_teaming.parsers.definition_processor import DefinitionProcessor
+        from zerogate_red_teaming.parsers.definition_processor import (
+            DefinitionProcessor,
+        )
 
         processor = DefinitionProcessor.__new__(DefinitionProcessor)
         result = processor._get_docstring(class_node)

@@ -198,7 +198,10 @@ class TestVerifyStoredIds:
             verify_stored_ids({1, 2})
 
     def test_batches_large_id_sets(self) -> None:
-        from zerogate_red_teaming.vector_store import _RETRIEVE_BATCH_SIZE, verify_stored_ids
+        from zerogate_red_teaming.vector_store import (
+            _RETRIEVE_BATCH_SIZE,
+            verify_stored_ids,
+        )
 
         mock_client = MagicMock()
         mock_client.retrieve.return_value = []
